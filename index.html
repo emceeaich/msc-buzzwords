@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+<head>
+<title>MSC Buzzword Generator</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, shrink-to-fit=no, user-scalable=no">
+<style>
+body {
+    font-size: 1.25em;
+    font-weight: 400;
+    color: #555;
+    background: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    margin: 0;
+}
+header {
+    padding-top: 1vh;
+    padding-bottom: 2vh;
+    padding-left: 2vw;
+    background:black;
+    color: whitesmoke;
+}
+div {
+    padding-top: 2vh;
+    padding-left: 2vw;
+}
+div span {
+    font-size: 150%;
+}
+</style>
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<![endif]-->
+</head>
+<body>
+<header>
+<h1>NASA: Manned Spacecraft Center</h1>
+<h2>Buzzword Generator</h2>
+</header>
+<div>
+    <span id="buzzword"></span>
+    <br>
+    <button class="moar">New Buzzword</button>
+</div>
+<div>
+  <small>Based on a NASA history tweet by <a href="https://twitter.com/People_Of_Space/status/935240141999955969">Herb Baker</a>; coded by <a href="https://emmah.net">Emma "Triage Girl" Humphries</a>; not an actual NASA site.</small>
+</div>
+<script type="text/javascript">
+(function() {
+var columnOne = [
+'integrated',
+'total',
+'systematized',
+'parallel',
+'responsive',
+'optimal',
+'synchronized',
+'compatible',
+'balanced'
+];
+
+var columnTwo = [
+'Management',
+'organizational',
+'monitored',
+'reciprocal',
+'digital',
+'logistical',
+'transitional',
+'incremental',
+'third-generation',
+'policy'
+];
+
+var columnThree = [
+'Options',
+'Flexibility',
+'capability',
+'mobility',
+'programming',
+'concept',
+'time-phase',
+'projection',
+'hardware',
+'contingency'
+];
+
+function generator () { 
+      return columnOne[Math.floor(Math.random()*columnOne.length)] + ' ' +
+         columnTwo[Math.floor(Math.random()*columnTwo.length)] + ' ' +
+         columnThree[Math.floor(Math.random()*columnThree.length)];
+}
+
+var setBuzzword = function () {
+    buzzword.innerHTML = generator();
+}
+
+var buzzword = document.getElementById('buzzword');
+document.querySelector('.moar').addEventListener('click', setBuzzword);
+
+setBuzzword();
+})();
+</script>
+</body>
+</html>
